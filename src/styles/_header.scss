@@ -1,0 +1,71 @@
+@use 'variables';
+
+.header {
+    background-color: variables.$secondaryBgColor;
+    display: flex;
+    align-items: center;
+
+    &__first {
+        display: flex;
+        align-items: center;
+
+        &__logo {
+            display: flex;
+            align-items: center;
+
+            a {
+                fill: #f47521;
+                transition: fill .2s ease-in-out;
+                
+                svg {
+                    padding: 0 18px;
+                    width: 170px;
+                    height: 100%;
+                    display: block;
+                }
+
+                &:hover {
+                    fill: #fff;
+                }
+            }
+        }
+        grid-template-columns: repeat(1f);
+
+        &__nav {
+            display: flex;
+            
+            .header__svg-icon {
+                width: 24px;
+                fill: variables.$secondaryTextColor;
+            }
+            
+            &__item {
+                display: flex;
+                align-items: center;
+                padding: 0 16px;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: #141519;
+
+                    span {
+                        color: variables.$textColor;
+                    }
+
+                    .header__svg-icon {
+                        fill: #fff;
+                    }
+                }
+
+                a {
+                    text-decoration: none;
+                }
+
+                span {
+                    color: variables.$secondaryTextColor;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
