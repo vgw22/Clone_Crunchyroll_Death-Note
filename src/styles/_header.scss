@@ -1,71 +1,149 @@
 @use 'variables';
 
 .header {
-    background-color: variables.$secondaryBgColor;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    padding: 0 72px 0 72px;
+    background-color: variables.$secondaryBgColor;
+
+    a {
+        text-decoration: none;
+        margin-bottom: -2px;
+    }
 
     &__first {
         display: flex;
         align-items: center;
+        height: 100%;
 
         &__logo {
             display: flex;
             align-items: center;
+            padding: 0 18px;
+            height: 100%;
+            fill: #f47521;
+            transition: fill .2s ease-in-out;
+            
+            &:hover {
+                fill: #fff;
+            }
 
-            a {
-                fill: #f47521;
-                transition: fill .2s ease-in-out;
-                
-                svg {
-                    padding: 0 18px;
-                    width: 170px;
-                    height: 100%;
-                    display: block;
-                }
-
-                &:hover {
-                    fill: #fff;
-                }
+            svg {
+                width: 135px;
             }
         }
-        grid-template-columns: repeat(1f);
 
         &__nav {
             display: flex;
-            
-            .header__svg-icon {
-                width: 24px;
-                fill: variables.$secondaryTextColor;
-            }
-            
-            &__item {
-                display: flex;
-                align-items: center;
-                padding: 0 16px;
-                cursor: pointer;
+            align-items: center;
+            padding: 0 16px;
+            height: 100%;
+            cursor: pointer;
 
-                &:hover {
-                    background-color: #141519;
+            &:hover {
+                background-color: #141519;
 
-                    span {
-                        color: variables.$textColor;
-                    }
-
-                    .header__svg-icon {
-                        fill: #fff;
-                    }
+                span {
+                    color: variables.$textColor;
                 }
 
                 a {
-                    text-decoration: none;
+                    color: variables.$textColor;
                 }
 
-                span {
-                    color: variables.$secondaryTextColor;
-                    font-size: 16px;
+                .header-svg-icon {
+                    fill: #fff;
                 }
+            }
+
+            span {
+                display: flex;
+                align-items: center;
+                color: variables.$secondaryTextColor;
+                font-size: 16px;
+                margin-top: -3px;
+            }
+
+            .header-svg-icon {
+                fill: #dadada;
+                width: 24px;
+            }
+
+            #adjustment {
+                margin-bottom: -2px;
             }
         }
     }
+
+    &__second {
+        display: flex;
+        align-items: center;
+        height: 100%;
+
+        &__nav {
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
+            height: 100%;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #141519;
+
+                .header-svg-icon {
+                    fill: #fff;
+                }
+            }
+
+            &--crown-svg {
+                fill: #fab818;
+                width: 24px;
+                margin-right: 8px;
+            }
+
+            .free-trial {
+                display: block;
+                justify-content: center;
+                margin-bottom: -32px;
+                color: #dadada;
+                text-decoration: none;
+                height: 100%;
+
+                span {
+                    display: block;
+                    text-transform: uppercase;
+                    font-size: 10px;
+                    line-height: 15px;
+                }
+
+                &--up {
+                    color: #fab818;
+                }
+
+                &--down {
+                    color: variables.$secondaryTextColor;
+                }
+            }
+
+            &__search,
+            &__queue,
+            &__account-menu {
+                display: flex;
+                align-items: center;
+                color: #dadada;
+                text-decoration: none;
+                height: 100%;
+                fill: #dadada;
+                width: 24px;
+            }
+        }
+    }
+
+    
+}
+
+#free-trial:hover .free-trial--down {
+    color: #fff;
 }
